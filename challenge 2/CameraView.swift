@@ -12,7 +12,9 @@ struct CameraView : View {
     private let label = Text("Frame ")
     var body: some View {
         if let image = image{
-            Image(image, scale: 1.0)
+            Image(image, scale: 1.0, orientation: .up, label: label)
+        } else{
+            Color.black
         }
     }
 }
