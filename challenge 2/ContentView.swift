@@ -11,11 +11,12 @@ import RealityKit
 struct ContentView : View {
     
     var body: some View {
-        
-        
+        Text("Hi")
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
