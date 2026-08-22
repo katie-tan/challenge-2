@@ -10,7 +10,13 @@ import Combine
 class FrameHandler: ObservableObject {
     @Published var frame: CGImage?
     private var permissionGranted = false
+    private let captureSession = AVCaptureSession()
+    private let sessionQueue = DispatchQueue(label: "sessionQueue")
     
+    init() {
+        checkPermission()
+        sessionQueue.queue
+    }
     
     func checkPermission() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
