@@ -62,7 +62,7 @@ class FrameHandler: NSObject, ObservableObject {
         videoOutput.connection(with: .video)?.videoOrientation = .portrait
     }
     
-    // Helper function to convert CMSampleBuffer to CGImage
+     //Helper function to convert CMSampleBuffer to CGImage
     private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> CGImage? {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
         let ciImage = CIImage(cvPixelBuffer: imageBuffer)
@@ -81,12 +81,12 @@ extension FrameHandler: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
     }
 
-    private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> CGImage? {
-        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
-        let ciImage = CIImage(cvPixelBuffer: imageBuffer)
-        guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
-        
-        return cgImage
-    }
+//    private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> CGImage? {
+//        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
+//        let ciImage = CIImage(cvPixelBuffer: imageBuffer)
+//        guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
+//        
+//        return cgImage
+//    }
 }
 
