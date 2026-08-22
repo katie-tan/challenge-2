@@ -9,9 +9,9 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
-    
+    @StateObject private var model = FrameHandler()
     var body: some View {
-        Text("Hi")
+        FrameView(image: model.frame)
     }
 }
 

@@ -7,7 +7,7 @@
 import SwiftUI
 import RealityKit
 
-struct CameraView : View {
+struct FrameView : View {
     var image: CGImage?
     private let label = Text("Frame ")
     var body: some View {
@@ -19,7 +19,7 @@ struct CameraView : View {
     }
 }
 
-struct CameraView_Previews: PreviewProvider {
+struct FrameView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
